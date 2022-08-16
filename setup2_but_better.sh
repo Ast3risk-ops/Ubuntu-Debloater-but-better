@@ -1,15 +1,16 @@
 #PPAS
-echo "This script will add pop PPA's and will install vscode, thunderbird, lutris, gedit plugins, ubuntu proprietary drivers, gnome tweak tool and GNU spell"
+echo "This script will add pop repos, gnome-tweaks and remove gnome software and the snap store then reboot"
 read -p "THE AUTHOR IS NOT RESPONSIBLE FOR ANY DAMAGE, continue? [y/n] " ANSWER
 if [ $ANSWER == "y" ]; then
-  sudo add-apt-repository ppa:system76/pop
-  wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-  sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 63C46DF0140D738961429F4E204DD8AEC33A7AFF
+  add-apt-repository "deb http://apt.pop-os.org/proprietary $(lsb_release -cs) main"
+  add-apt-repository "deb http://apt.pop-os.org/release $(lsb_release -cs) main"
   sudo apt update
   sudo apt full-upgrade
-  sudo apt install gnome-tweaks thunderbird lutris code ubuntu-restricted-extras nano neofetch gedit gedit-plugin-text-size gnome-tweaks spell -y
+  sudo apt install gnome-tweaks -y
   sudo apt purge gnome-software -y
   sudo snap remove snap-store
+  sudo reboot now
 else
   echo "Quitting..."
 fi
