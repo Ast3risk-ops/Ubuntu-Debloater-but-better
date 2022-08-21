@@ -3,6 +3,7 @@ echo "This script will add pop repos, gnome-tweaks and remove gnome software and
 read -p "THE AUTHOR IS NOT RESPONSIBLE FOR ANY DAMAGE, continue? [y/n] " ANSWER
 if [ $ANSWER == "y" ]; then
   sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 63C46DF0140D738961429F4E204DD8AEC33A7AFF
+  sudo apt-key export C33A7AFF | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/pop-os-apps.gpg
   sudo add-apt-repository "deb http://apt.pop-os.org/proprietary $(lsb_release -cs) main"
   sudo apt update
   sudo apt full-upgrade
