@@ -7,6 +7,7 @@ echo "1. Update Ubuntu"
 echo "2. Install Needed Ubuntu Apps"
 echo "3. Replace Snap Store with Gnome Software"
 echo "4. Install ZSH with Power10k and zsh autocompilte"
+echo "5. Install i3"
 echo "0. Exit"
 read -p "Type the number." ANSWER
 
@@ -58,6 +59,10 @@ echo 'source ~/.zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh' >> ~/.
 echo 'skip_global_compinit=1' >> ~/.zshenv
 echo "Making zsh Default Shell"
 chsh -s $(which zsh)
+fi
+if [ $ANSWER == "5" ]; then
+sudo apt update
+sudo apt install i3 -y
 else
   echo "Quitting..."
 fi
