@@ -9,3 +9,12 @@ Finally the Toolbox is being backported to Ubuntu!
 
 
 wget raw.githubusercontent.com/SteavenGamerYT/SteavenToolBox-For-Ubuntu/main/toolbox.sh && chmod +x ./toolbox.sh && ./toolbox.sh
+
+
+or even Shorter Command 
+
+
+thanks to L27001#0414 for this command
+
+
+bash <(wget -qO- raw.githubusercontent.com/SteavenGamerYT/SteavenToolBox-For-Ubuntu/main/toolbox.sh)
