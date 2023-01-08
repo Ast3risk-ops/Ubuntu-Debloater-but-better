@@ -8,4 +8,4 @@ Finally the Toolbox is being backported to Ubuntu!
 # Running SteavenToolBox for Ubuntu
 
 
-curl raw.githubusercontent.com/SteavenGamerYT/SteavenToolBox-For-Ubuntu/main/toolbox.sh | bash
+wget raw.githubusercontent.com/SteavenGamerYT/SteavenToolBox-For-Ubuntu/main/toolbox.sh && chmod +x ./toolbox.sh && ./toolbox.sh
