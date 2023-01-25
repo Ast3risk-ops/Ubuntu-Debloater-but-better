@@ -68,6 +68,6 @@ do
   sudo apt install i3 -y
   else
     echo "Quitting..."
-    RUN=0 # set run flag to 0 so program will end
+    RUN=1 # set run flag to 0 so program will end
   fi
 done
