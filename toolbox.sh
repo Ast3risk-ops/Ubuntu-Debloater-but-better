@@ -14,6 +14,10 @@ do
   echo "0. Exit"
   read -p "Type the number." ANSWER
 
+  if [ $ANSWER == "0" ]; then
+  exit
+  fi
+
   if [ $ANSWER == "1" ]; then
   clear
   echo "Updating Ubuntu cache"
