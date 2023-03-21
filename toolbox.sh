@@ -11,6 +11,7 @@ do
   echo "3. Replace Snap Store with Gnome Software"
   echo "4. Install ZSH with Power10k and zsh autocompilte"
   echo "5. Install i3"
+  echo "6. Purge Remove SNAP"
   echo "0. Exit"
   read -p "Type the number." ANSWER
 
@@ -70,6 +71,18 @@ do
   if [ $ANSWER == "5" ]; then
   sudo apt update
   sudo apt install i3 -y
+  if [ $ANSWER == "6" ]; then
+  sudo snap remove firefox
+  sudo snap remove snap-store
+  sudo snap remove gtk-common-themes
+  sudo snap remove gnome-42-2204
+  sudo snap remove core22
+  sudo snap remove core20
+  sudo snap remove bare
+  sudo snap remove snapd-desktop-integration
+  sudo snap remove snapd
+  sudo apt purge snapd -y
+  fi
   else
     echo "Quitting..."
     RUN=1 # set run flag to 0 so program will end
